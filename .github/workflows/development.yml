@@ -1,10 +1,15 @@
-name: Java CI with Maven development
+name: Java CI with Maven and Release on main tags
 
 on:
   push:
-    branches: [ development ]
+    tags:
+      - "v*.*.*"
   pull_request:
-    branches: [ development ]
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -12,9 +17,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout source code from repository
+    - name: Checkout source code
       uses: actions/checkout@v3
-    - name: Set up virtual machine with JDK 11
+    - name: Set up JDK 11
       uses: actions/setup-java@v3
       with:
         java-version: '11'
@@ -22,3 +27,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: target/*.jar
