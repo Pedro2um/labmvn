@@ -39,6 +39,9 @@ public class App
             String asciiArt1 = FigletFont.convertOneLine(
             currentWeather.get("temperature").getAsString()+"°C");
             System.out.println(asciiArt1);
+
+
+            
         }
 
             
