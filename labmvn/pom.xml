@@ -115,7 +115,7 @@
               <archive>
                 <manifest>
                   <mainClass>
-                    App
+                     com.mycompany.app.App
                   </mainClass>
                 </manifest>
               </archive>
