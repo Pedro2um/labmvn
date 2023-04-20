@@ -92,6 +92,15 @@
         </plugin>
 
 
+
+
+      </plugins>
+
+    </pluginManagement>
+
+  <plugins>
+    
+  
        <!---->
           <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -118,10 +127,7 @@
         </executions>
       </plugin>
 
+    </plugins>
        <!---->
-
-
-      </plugins>
-    </pluginManagement>
   </build>
 </project>
