@@ -115,7 +115,7 @@
               <archive>
                 <manifest>
                   <mainClass>
-                    ******************** nome da sua classe principal *****()
+                    App
                   </mainClass>
                 </manifest>
               </archive>
